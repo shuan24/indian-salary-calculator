@@ -1,0 +1,2 @@
+const API_BASE_URL="https://bluekeep.pythonanywhere.com";
+async function calculateSalary(payload){const r=await fetch(`${API_BASE_URL}/api/v2/calculate`,{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify(payload)});const d=await r.json();if(!r.ok||!d.success)throw new Error(d.error||"Calculation failed");return d;}
